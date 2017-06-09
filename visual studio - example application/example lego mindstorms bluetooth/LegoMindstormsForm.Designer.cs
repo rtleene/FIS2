@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.connectionGroupBox = new System.Windows.Forms.GroupBox();
             this.disconnectButton = new System.Windows.Forms.Button();
             this.connectButton = new System.Windows.Forms.Button();
@@ -305,7 +306,6 @@
             this.inputGroupBox.PerformLayout();
             this.outputGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
