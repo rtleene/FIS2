@@ -153,5 +153,10 @@ namespace Example_Lego_Mindstorms_Bluetooth
         {
 
         }
+
+        private void outputGroupBox_Enter_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
