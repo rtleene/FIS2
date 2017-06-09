@@ -146,8 +146,12 @@ namespace Example_Lego_Mindstorms_Bluetooth
                 disconnectButton.Enabled = false;
             }
         }
-        
+
         #endregion
-        
+
+        private void outputGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

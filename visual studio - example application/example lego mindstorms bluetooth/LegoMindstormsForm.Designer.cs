@@ -54,9 +54,11 @@
             this.connectionGroupBox.Controls.Add(this.label1);
             this.connectionGroupBox.Controls.Add(this.portListBox);
             this.connectionGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.connectionGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.connectionGroupBox.Location = new System.Drawing.Point(32, 29);
+            this.connectionGroupBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.connectionGroupBox.Name = "connectionGroupBox";
-            this.connectionGroupBox.Size = new System.Drawing.Size(406, 131);
+            this.connectionGroupBox.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.connectionGroupBox.Size = new System.Drawing.Size(1083, 312);
             this.connectionGroupBox.TabIndex = 4;
             this.connectionGroupBox.TabStop = false;
             this.connectionGroupBox.Text = "Connection";
@@ -64,9 +66,10 @@
             // disconnectButton
             // 
             this.disconnectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disconnectButton.Location = new System.Drawing.Point(275, 93);
+            this.disconnectButton.Location = new System.Drawing.Point(733, 222);
+            this.disconnectButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.disconnectButton.Name = "disconnectButton";
-            this.disconnectButton.Size = new System.Drawing.Size(120, 23);
+            this.disconnectButton.Size = new System.Drawing.Size(320, 55);
             this.disconnectButton.TabIndex = 2;
             this.disconnectButton.Text = "Disconnect";
             this.disconnectButton.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@
             // connectButton
             // 
             this.connectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.connectButton.Location = new System.Drawing.Point(275, 64);
+            this.connectButton.Location = new System.Drawing.Point(733, 153);
+            this.connectButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(120, 23);
+            this.connectButton.Size = new System.Drawing.Size(320, 55);
             this.connectButton.TabIndex = 8;
             this.connectButton.Text = "Connect";
             this.connectButton.UseVisualStyleBackColor = true;
@@ -86,9 +90,10 @@
             // refreshButton
             // 
             this.refreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshButton.Location = new System.Drawing.Point(275, 35);
+            this.refreshButton.Location = new System.Drawing.Point(733, 83);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(120, 23);
+            this.refreshButton.Size = new System.Drawing.Size(320, 55);
             this.refreshButton.TabIndex = 7;
             this.refreshButton.Text = "Referesh ports";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -98,9 +103,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(16, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 13);
+            this.label1.Size = new System.Drawing.Size(363, 32);
             this.label1.TabIndex = 6;
             this.label1.Text = "Port for blutooth connection";
             // 
@@ -108,9 +114,11 @@
             // 
             this.portListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.portListBox.FormattingEnabled = true;
-            this.portListBox.Location = new System.Drawing.Point(9, 35);
+            this.portListBox.ItemHeight = 31;
+            this.portListBox.Location = new System.Drawing.Point(24, 83);
+            this.portListBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.portListBox.Name = "portListBox";
-            this.portListBox.Size = new System.Drawing.Size(260, 82);
+            this.portListBox.Size = new System.Drawing.Size(687, 190);
             this.portListBox.TabIndex = 5;
             // 
             // inputGroupBox
@@ -120,9 +128,11 @@
             this.inputGroupBox.Controls.Add(this.inputButton);
             this.inputGroupBox.Enabled = false;
             this.inputGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputGroupBox.Location = new System.Drawing.Point(12, 151);
+            this.inputGroupBox.Location = new System.Drawing.Point(32, 360);
+            this.inputGroupBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.inputGroupBox.Name = "inputGroupBox";
-            this.inputGroupBox.Size = new System.Drawing.Size(200, 143);
+            this.inputGroupBox.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.inputGroupBox.Size = new System.Drawing.Size(533, 341);
             this.inputGroupBox.TabIndex = 5;
             this.inputGroupBox.TabStop = false;
             this.inputGroupBox.Text = "Input";
@@ -130,9 +140,10 @@
             // labelInstructions
             // 
             this.labelInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInstructions.Location = new System.Drawing.Point(9, 19);
+            this.labelInstructions.Location = new System.Drawing.Point(24, 45);
+            this.labelInstructions.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelInstructions.Name = "labelInstructions";
-            this.labelInstructions.Size = new System.Drawing.Size(184, 63);
+            this.labelInstructions.Size = new System.Drawing.Size(491, 150);
             this.labelInstructions.TabIndex = 4;
             this.labelInstructions.Text = "Via this form you can send a message to the Brick. The message will be saved and " +
     "can be retrieved via the Output form.";
@@ -140,17 +151,19 @@
             // inputTextBox
             // 
             this.inputTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputTextBox.Location = new System.Drawing.Point(9, 81);
+            this.inputTextBox.Location = new System.Drawing.Point(24, 193);
+            this.inputTextBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.inputTextBox.Name = "inputTextBox";
-            this.inputTextBox.Size = new System.Drawing.Size(184, 20);
+            this.inputTextBox.Size = new System.Drawing.Size(484, 39);
             this.inputTextBox.TabIndex = 1;
             // 
             // inputButton
             // 
             this.inputButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputButton.Location = new System.Drawing.Point(9, 111);
+            this.inputButton.Location = new System.Drawing.Point(24, 265);
+            this.inputButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.inputButton.Name = "inputButton";
-            this.inputButton.Size = new System.Drawing.Size(184, 23);
+            this.inputButton.Size = new System.Drawing.Size(491, 55);
             this.inputButton.TabIndex = 0;
             this.inputButton.Text = "Send message";
             this.inputButton.UseVisualStyleBackColor = true;
@@ -162,19 +175,23 @@
             this.outputGroupBox.Controls.Add(this.outputlistBox);
             this.outputGroupBox.Enabled = false;
             this.outputGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputGroupBox.Location = new System.Drawing.Point(218, 151);
+            this.outputGroupBox.Location = new System.Drawing.Point(581, 360);
+            this.outputGroupBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.outputGroupBox.Name = "outputGroupBox";
-            this.outputGroupBox.Size = new System.Drawing.Size(200, 143);
+            this.outputGroupBox.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.outputGroupBox.Size = new System.Drawing.Size(533, 341);
             this.outputGroupBox.TabIndex = 6;
             this.outputGroupBox.TabStop = false;
-            this.outputGroupBox.Text = "Output";
+            this.outputGroupBox.Text = "Live Status Feed";
+            this.outputGroupBox.Enter += new System.EventHandler(this.outputGroupBox_Enter);
             // 
             // outputButton
             // 
             this.outputButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputButton.Location = new System.Drawing.Point(6, 111);
+            this.outputButton.Location = new System.Drawing.Point(16, 265);
+            this.outputButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.outputButton.Name = "outputButton";
-            this.outputButton.Size = new System.Drawing.Size(187, 23);
+            this.outputButton.Size = new System.Drawing.Size(499, 55);
             this.outputButton.TabIndex = 0;
             this.outputButton.Text = "Read message";
             this.outputButton.UseVisualStyleBackColor = true;
@@ -184,19 +201,22 @@
             // 
             this.outputlistBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputlistBox.FormattingEnabled = true;
-            this.outputlistBox.Location = new System.Drawing.Point(7, 19);
+            this.outputlistBox.ItemHeight = 31;
+            this.outputlistBox.Location = new System.Drawing.Point(19, 45);
+            this.outputlistBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.outputlistBox.Name = "outputlistBox";
-            this.outputlistBox.Size = new System.Drawing.Size(187, 82);
+            this.outputlistBox.Size = new System.Drawing.Size(492, 190);
             this.outputlistBox.TabIndex = 4;
             // 
             // LegoMindstormsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 304);
+            this.ClientSize = new System.Drawing.Size(1147, 725);
             this.Controls.Add(this.connectionGroupBox);
             this.Controls.Add(this.inputGroupBox);
             this.Controls.Add(this.outputGroupBox);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "LegoMindstormsForm";
             this.Text = "Example Lego Mindstorms Bluetooth";
             this.connectionGroupBox.ResumeLayout(false);
