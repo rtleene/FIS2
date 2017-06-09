@@ -193,7 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 304);
+            this.ClientSize = new System.Drawing.Size(906, 304);
             this.Controls.Add(this.connectionGroupBox);
             this.Controls.Add(this.inputGroupBox);
             this.Controls.Add(this.outputGroupBox);
