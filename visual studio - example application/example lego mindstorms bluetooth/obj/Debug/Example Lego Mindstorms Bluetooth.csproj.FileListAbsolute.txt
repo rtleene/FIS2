@@ -45,3 +45,6 @@ C:\Users\Remko\Downloads\EV3MessengerWithExampleProjects\Week 3 - Practical reso
 C:\Users\lama nasser eddin 19\Documents\New folder\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\bin\Debug\Example Lego Mindstorms Bluetooth.exe.config
 C:\Users\lama nasser eddin 19\Documents\New folder\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example Lego Mindstorms Bluetooth.exe
 C:\Users\lama nasser eddin 19\Documents\New folder\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example Lego Mindstorms Bluetooth.pdb
+C:\Users\Remko\Source\Repos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\bin\Debug\Example Lego Mindstorms Bluetooth.exe.config
+C:\Users\Remko\Source\Repos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example Lego Mindstorms Bluetooth.exe
+C:\Users\Remko\Source\Repos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example Lego Mindstorms Bluetooth.pdb
