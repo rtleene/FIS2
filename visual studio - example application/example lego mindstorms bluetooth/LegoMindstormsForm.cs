@@ -158,5 +158,50 @@ namespace Example_Lego_Mindstorms_Bluetooth
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            messenger.SendMessage("MESSAGE", "forward");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            messenger.SendMessage("MESSAGE", "right");
+        }
+
+        private void btnReverse_Click(object sender, EventArgs e)
+        {
+            messenger.SendMessage("MESSAGE", "reverse");
+        }
+
+        private void btnLeft_Click(object sender, EventArgs e)
+        {
+            messenger.SendMessage("MESSAGE", "left");
+        }
+
+        private void btnstart_Click(object sender, EventArgs e)
+        {
+            messenger.SendMessage("MESSAGE", "start");
+        }
+
+        private void btnstop_Click(object sender, EventArgs e)
+        {
+            messenger.SendMessage("MESSAGE", "stop");
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            messenger.SendMessage("MESSAGE", "load");
+        }
+
+        private void btnUnload_Click(object sender, EventArgs e)
+        {
+            messenger.SendMessage("MESSAGE", "unload");
+        }
+
+        private void btnStop2_Click(object sender, EventArgs e)
+        {
+            messenger.SendMessage("MESSAGE", "stop");
+        }
     }
 }
