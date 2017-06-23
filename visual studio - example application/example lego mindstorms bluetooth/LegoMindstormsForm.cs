@@ -79,28 +79,28 @@ namespace Example_Lego_Mindstorms_Bluetooth
 
         #region Input & output form
 
-        private void inputButton_Click(object sender, EventArgs e)
-        {
-            string txtMsg = inputTextBox.Text;
-            // Make sure a message has been typed
-            if (!String.IsNullOrWhiteSpace(txtMsg))
-            {
-                // Send a message to the Brick with title: MESSAGE and the message
-                if (messenger.SendMessage("MESSAGE", txtMsg))
-                {
-                    inputTextBox.Text = "";
-                    MessageBox.Show("The message has been send to the Brick");
-                }
-                else
-                {
-                    MessageBox.Show("Unable to send the message to the Brick. Please try again.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please type a message in the above textbox for the Brick");
-            }
-        }
+        //private void inputButton_Click(object sender, EventArgs e)
+        //{
+        //    string txtMsg = inputTextBox.Text;
+        //    // Make sure a message has been typed
+        //    if (!String.IsNullOrWhiteSpace(txtMsg))
+        //    {
+        //        // Send a message to the Brick with title: MESSAGE and the message
+        //        if (messenger.SendMessage("MESSAGE", txtMsg))
+        //        {
+        //            inputTextBox.Text = "";
+        //            MessageBox.Show("The message has been send to the Brick");
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Unable to send the message to the Brick. Please try again.");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Please type a message in the above textbox for the Brick");
+        //    }
+        //}
 
         private void outputButton_Click(object sender, EventArgs e)
         {
@@ -130,7 +130,6 @@ namespace Example_Lego_Mindstorms_Bluetooth
                 refreshButton.Enabled = false;
                 connectButton.Enabled = false;
 
-                inputGroupBox.Enabled = true;
                 outputGroupBox.Enabled = true;
                 disconnectButton.Enabled = true;
 
@@ -141,7 +140,6 @@ namespace Example_Lego_Mindstorms_Bluetooth
                 refreshButton.Enabled = true;
                 connectButton.Enabled = true;
 
-                inputGroupBox.Enabled = false;
                 outputGroupBox.Enabled = false;
                 disconnectButton.Enabled = false;
             }
@@ -157,6 +155,40 @@ namespace Example_Lego_Mindstorms_Bluetooth
         private void outputGroupBox_Enter_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStart_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Send a message to the Brick with title: MESSAGE and the message
+            if (messenger.SendMessage("MESSAGE", "go"))
+            {
+                //update#2432432
+
+            }
+            else
+            {
+                MessageBox.Show("Unable to send the message to the Brick. Please make sure to be connected.");
+            }
+        }
+
+        private void btnStart_MouseUp(object sender, MouseEventArgs e)
+        {
+            // Send a message to the Brick with title: MESSAGE and the message
+            if (messenger.SendMessage("MESSAGE", "stop"))
+            {
+                //update#2432432
+
+            }
         }
     }
 }

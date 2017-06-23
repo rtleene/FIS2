@@ -53,6 +53,7 @@
     <Compile Include="LegoMindstormsForm.Designer.cs">
       <DependentUpon>LegoMindstormsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LinkingMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LegoMindstormsForm.resx">

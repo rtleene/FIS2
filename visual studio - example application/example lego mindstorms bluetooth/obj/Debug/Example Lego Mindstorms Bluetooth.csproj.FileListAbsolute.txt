@@ -45,3 +45,14 @@ C:\Users\Remko\Downloads\EV3MessengerWithExampleProjects\Week 3 - Practical reso
 C:\Users\lama nasser eddin 19\Documents\New folder\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\bin\Debug\Example Lego Mindstorms Bluetooth.exe.config
 C:\Users\lama nasser eddin 19\Documents\New folder\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example Lego Mindstorms Bluetooth.exe
 C:\Users\lama nasser eddin 19\Documents\New folder\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example Lego Mindstorms Bluetooth.pdb
+F:\Documents\GitRepos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example Lego Mindstorms Bluetooth.csprojResolveAssemblyReference.cache
+F:\Documents\GitRepos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example_Lego_Mindstorms_Bluetooth.LegoMindstormsForm.resources
+F:\Documents\GitRepos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example_Lego_Mindstorms_Bluetooth.Properties.Resources.resources
+F:\Documents\GitRepos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example Lego Mindstorms Bluetooth.csproj.GenerateResource.Cache
+F:\Documents\GitRepos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example Lego Mindstorms Bluetooth.exe
+F:\Documents\GitRepos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\obj\Debug\Example Lego Mindstorms Bluetooth.pdb
+F:\Documents\GitRepos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\bin\Debug\Example Lego Mindstorms Bluetooth.exe.config
+F:\Documents\GitRepos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\bin\Debug\Example Lego Mindstorms Bluetooth.exe
+F:\Documents\GitRepos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\bin\Debug\Example Lego Mindstorms Bluetooth.pdb
+F:\Documents\GitRepos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\bin\Debug\EV3MessengerLib.dll
+F:\Documents\GitRepos\FIS2\visual studio - example application\Example Lego Mindstorms Bluetooth\bin\Debug\EV3MessengerLib.xml

@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example Lego Mindstorms Bluetooth", "Example Lego Mindstorms Bluetooth\Example Lego Mindstorms Bluetooth.csproj", "{E532C3D7-1451-42CC-A023-4CE19BE45BD2}"
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGV Bluetooth Control GUI", "Example Lego Mindstorms Bluetooth\AGV Bluetooth Control GUI.csproj", "{E532C3D7-1451-42CC-A023-4CE19BE45BD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
