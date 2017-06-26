@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.portListBox = new System.Windows.Forms.ListBox();
             this.outputGroupBox = new System.Windows.Forms.GroupBox();
-            this.outputButton = new System.Windows.Forms.Button();
             this.outputlistBox = new System.Windows.Forms.ListBox();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
@@ -110,7 +109,7 @@
             this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(7, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 15);
+            this.label1.Size = new System.Drawing.Size(394, 40);
             this.label1.TabIndex = 6;
             this.label1.Text = "Port for blutooth connection";
             // 
@@ -118,15 +117,14 @@
             // 
             this.portListBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.portListBox.FormattingEnabled = true;
-            this.portListBox.ItemHeight = 15;
-            this.portListBox.Location = new System.Drawing.Point(10, 40);
+            this.portListBox.ItemHeight = 39;
+            this.portListBox.Location = new System.Drawing.Point(12, 40);
             this.portListBox.Name = "portListBox";
-            this.portListBox.Size = new System.Drawing.Size(303, 94);
+            this.portListBox.Size = new System.Drawing.Size(303, 82);
             this.portListBox.TabIndex = 5;
             // 
             // outputGroupBox
             // 
-            this.outputGroupBox.Controls.Add(this.outputButton);
             this.outputGroupBox.Controls.Add(this.outputlistBox);
             this.outputGroupBox.Enabled = false;
             this.outputGroupBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -137,35 +135,26 @@
             this.outputGroupBox.TabStop = false;
             this.outputGroupBox.Text = "Output";
             // 
-            // outputButton
-            // 
-            this.outputButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputButton.Location = new System.Drawing.Point(8, 315);
-            this.outputButton.Name = "outputButton";
-            this.outputButton.Size = new System.Drawing.Size(458, 27);
-            this.outputButton.TabIndex = 0;
-            this.outputButton.Text = "Read message";
-            this.outputButton.UseVisualStyleBackColor = true;
-            this.outputButton.Click += new System.EventHandler(this.outputButton_Click);
-            // 
             // outputlistBox
             // 
             this.outputlistBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputlistBox.FormattingEnabled = true;
-            this.outputlistBox.ItemHeight = 15;
+            this.outputlistBox.ItemHeight = 39;
             this.outputlistBox.Location = new System.Drawing.Point(8, 22);
             this.outputlistBox.Name = "outputlistBox";
-            this.outputlistBox.Size = new System.Drawing.Size(458, 289);
+            this.outputlistBox.Size = new System.Drawing.Size(458, 316);
             this.outputlistBox.TabIndex = 4;
             // 
             // btnStop
             // 
+            this.btnStop.Enabled = false;
             this.btnStop.Location = new System.Drawing.Point(310, 22);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(140, 27);
             this.btnStop.TabIndex = 7;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnStart
             // 
@@ -176,8 +165,7 @@
             this.btnStart.TabIndex = 8;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseDown);
-            this.btnStart.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseUp);
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnReverse
             // 
@@ -187,6 +175,8 @@
             this.btnReverse.TabIndex = 9;
             this.btnReverse.Text = "↓";
             this.btnReverse.UseVisualStyleBackColor = true;
+            this.btnReverse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnReverse_MouseDown);
+            this.btnReverse.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnReverse_MouseUp);
             // 
             // btnRight
             // 
@@ -196,6 +186,8 @@
             this.btnRight.TabIndex = 10;
             this.btnRight.Text = "→";
             this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRight_MouseDown);
+            this.btnRight.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnRight_MouseUp);
             // 
             // btnLeft
             // 
@@ -205,6 +197,8 @@
             this.btnLeft.TabIndex = 11;
             this.btnLeft.Text = "←";
             this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnLeft_MouseDown);
+            this.btnLeft.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnLeft_MouseUp);
             // 
             // btnForward
             // 
@@ -214,16 +208,19 @@
             this.btnForward.TabIndex = 12;
             this.btnForward.Text = "↑";
             this.btnForward.UseVisualStyleBackColor = true;
-            this.btnForward.Click += new System.EventHandler(this.button4_Click);
+            this.btnForward.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnForward_MouseDown);
+            this.btnForward.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnForward_MouseUp);
             // 
             // btnDropOff
             // 
+            this.btnDropOff.Enabled = false;
             this.btnDropOff.Location = new System.Drawing.Point(310, 22);
             this.btnDropOff.Name = "btnDropOff";
             this.btnDropOff.Size = new System.Drawing.Size(140, 27);
             this.btnDropOff.TabIndex = 14;
             this.btnDropOff.Text = "drop off";
             this.btnDropOff.UseVisualStyleBackColor = true;
+            this.btnDropOff.Click += new System.EventHandler(this.btnDropOff_Click);
             // 
             // btnPickUp
             // 
@@ -233,6 +230,7 @@
             this.btnPickUp.TabIndex = 15;
             this.btnPickUp.Text = "pick up";
             this.btnPickUp.UseVisualStyleBackColor = true;
+            this.btnPickUp.Click += new System.EventHandler(this.btnPickUp_Click);
             // 
             // groupBox1
             // 
@@ -277,17 +275,18 @@
             // 
             // btnPause
             // 
+            this.btnPause.Enabled = false;
             this.btnPause.Location = new System.Drawing.Point(164, 22);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(140, 27);
             this.btnPause.TabIndex = 9;
             this.btnPause.Text = "Pause ";
             this.btnPause.UseVisualStyleBackColor = true;
-            this.btnPause.Click += new System.EventHandler(this.button10_Click);
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
             // LegoMindstormsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 39F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(974, 370);
@@ -316,7 +315,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox portListBox;
         private System.Windows.Forms.GroupBox outputGroupBox;
-        private System.Windows.Forms.Button outputButton;
         private System.Windows.Forms.ListBox outputlistBox;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnStart;
