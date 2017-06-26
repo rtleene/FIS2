@@ -35,6 +35,62 @@ namespace Example_Lego_Mindstorms_Bluetooth
         public string positionNumber = "1";
         public string outputMessage = "";
 
+        //method
+
+            public void SendInstruction(string order, bool buttonreset)
+        {
+           // Send a message to the Brick with title: MESSAGE and the message
+            if (messenger.SendMessage("MESSAGE", order))
+            {
+                //update output box
+                EV3Message message = messenger.ReadMessage();
+                if (message != null)
+                {
+                    status = message.ValueAsText.Split();
+                    moveState = status[0];
+                    loadState = status[1];
+                    proxyCounter = status[2];
+                    positionNumber = status[3];
+
+                    switch (positionNumber)
+                    {
+                        default:
+                            positionNumber = "Runway 1";
+                            break;
+                        case "2":
+                            positionNumber = "Pick-up Zone";
+                            break;
+                        case "3":
+                            positionNumber = "Runway 2";
+                            break;
+                        case "4":
+                            positionNumber = "Drop-off Zone";
+                            break;
+                        case "5":
+                            positionNumber = "Runway 3";
+                            break;
+                    }
+
+
+                    // output list clear and update
+                    outputlistBox.Items.Clear();
+                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
+                    outputlistBox.Items.Add(outputMessage);
+                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
+
+                    //button disabling & enabling to default state
+                    if (buttonreset)
+                    {
+                        btnStart.Enabled = true;
+                        btnPause.Enabled = false;
+                        btnStop.Enabled = false;
+                    }
+                   
+
+
+                }
+            }
+        }
 
         #region Connection form
         private void refreshButton_Click(object sender, EventArgs e)
@@ -164,517 +220,95 @@ namespace Example_Lego_Mindstorms_Bluetooth
      
         private void btnForward_MouseDown(object sender, MouseEventArgs e)
         {
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "forward"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
+            SendInstruction("forward",true);
+           
         }
 
         private void btnForward_MouseUp(object sender, MouseEventArgs e)
         {
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "stop"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
+            SendInstruction("stop", true);
         }
 
         private void btnLeft_MouseDown(object sender, MouseEventArgs e)
         {
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "left"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
+            SendInstruction("left", true);
         }
 
         private void btnLeft_MouseUp(object sender, MouseEventArgs e)
         {
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "stop"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
+            SendInstruction("stop", true);
         }
 
         private void btnRight_MouseDown(object sender, MouseEventArgs e)
         {
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "right"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
+            SendInstruction("right", true);
         }
 
         private void btnRight_MouseUp(object sender, MouseEventArgs e)
         {
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "stop"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
+            SendInstruction("stop", true);
         }
 
-                private void btnReverse_MouseDown(object sender, MouseEventArgs e)
+        private void btnReverse_MouseDown(object sender, MouseEventArgs e)
         {
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "reverse"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
+            SendInstruction("reverse", true);
         }
 
         private void btnReverse_MouseUp(object sender, MouseEventArgs e)
         {
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "stop"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
+            SendInstruction("stop", true);
         }
 
         private void btnPickUp_Click(object sender, EventArgs e)
         {
+            SendInstruction("load", false);
             btnPickUp.Enabled = false;
             btnDropOff.Enabled = true;
             btnDropOff.Focus();
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "load"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
+            
 
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
-        
-    }
+        }
 
         private void btnDropOff_Click(object sender, EventArgs e)
         {
 
+            SendInstruction("unload", false);
             btnPickUp.Enabled = true;
             btnDropOff.Enabled = false;
             btnPickUp.Focus();
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "unload"))
-
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
-        
-    }
+           
+        }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            SendInstruction("start", false);
             btnPause.Enabled = true;
             btnStop.Enabled = true;
             btnStart.Enabled = false;
             btnPause.Focus();
 
-            // Send a message to the Brick with title: MESSAGE and the message
-            while (messenger.SendMessage("MESSAGE", "go"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-
-                    //sleep
-                    for (int i = 0; i < 64; i++)
-                    {
-                        if (i % 8 == 0)
-                            Thread.Sleep(1000);
-                    }
-                }
-            }
+            
         }
 
         private void btnPause_Click(object sender, EventArgs e)
         {
 
+
+            SendInstruction("pause", true);
             btnPause.Enabled = false;
-            // btnStop.Enabled = true;
+            btnStop.Enabled = true;
 
             btnStart.Text = "Resume";
             btnStart.Enabled = true;
             btnStart.Focus();
 
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "pause"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
+            
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
 
+            SendInstruction("stop", false);
             btnPause.Enabled = false;
             btnStop.Enabled = false;
 
@@ -682,47 +316,7 @@ namespace Example_Lego_Mindstorms_Bluetooth
             btnStart.Enabled = true;
             btnStart.Focus();
 
-            // Send a message to the Brick with title: MESSAGE and the message
-            if (messenger.SendMessage("MESSAGE", "stop"))
-            {
-                //update output box
-                EV3Message message = messenger.ReadMessage();
-                if (message != null)
-                {
-                    status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    switch (positionNumber)
-                    {
-                        default:
-                            positionNumber = "Runway 1";
-                            break;
-                        case "2":
-                            positionNumber = "Pick-up Zone";
-                            break;
-                        case "3":
-                            positionNumber = "Runway 2";
-                            break;
-                        case "4":
-                            positionNumber = "Drop-off Zone";
-                            break;
-                        case "5":
-                            positionNumber = "Runway 3";
-                            break;
-                    }
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
-                }
-            }
-        }
-
-        private void btnClearLog_Click(object sender, EventArgs e)
-        {
-            outputlistBox.Items.Clear();
+           
         }
     }
 }
