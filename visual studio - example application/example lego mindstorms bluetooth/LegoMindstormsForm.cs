@@ -162,6 +162,7 @@ namespace Example_Lego_Mindstorms_Bluetooth
         private void button4_Click(object sender, EventArgs e)
         {
             messenger.SendMessage("MESSAGE", "forward");
+        
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -181,7 +182,8 @@ namespace Example_Lego_Mindstorms_Bluetooth
 
         private void btnstart_Click(object sender, EventArgs e)
         {
-            messenger.SendMessage("MESSAGE", "start");
+            messenger.SendMessage("MESSAGE", "go");
+            MessageBox.Show("The message has been send to the Brick");
         }
 
         private void btnstop_Click(object sender, EventArgs e)
