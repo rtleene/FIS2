@@ -10,9 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//false commit2
-
-
 namespace Example_Lego_Mindstorms_Bluetooth
 {
     public partial class LegoMindstormsForm : Form
@@ -82,28 +79,28 @@ namespace Example_Lego_Mindstorms_Bluetooth
 
         #region Input & output form
 
-        private void inputButton_Click(object sender, EventArgs e)
-        {
-            string txtMsg = inputTextBox.Text;
-            // Make sure a message has been typed
-            if (!String.IsNullOrWhiteSpace(txtMsg))
-            {
-                // Send a message to the Brick with title: MESSAGE and the message
-                if (messenger.SendMessage("MESSAGE", txtMsg))
-                {
-                    inputTextBox.Text = "";
-                    MessageBox.Show("The message has been send to the Brick");
-                }
-                else
-                {
-                    MessageBox.Show("Unable to send the message to the Brick. Please try again.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please type a message in the above textbox for the Brick");
-            }
-        }
+        //private void inputButton_Click(object sender, EventArgs e)
+        //{
+        //    string txtMsg = inputTextBox.Text;
+        //    // Make sure a message has been typed
+        //    if (!String.IsNullOrWhiteSpace(txtMsg))
+        //    {
+        //        // Send a message to the Brick with title: MESSAGE and the message
+        //        if (messenger.SendMessage("MESSAGE", txtMsg))
+        //        {
+        //            inputTextBox.Text = "";
+        //            MessageBox.Show("The message has been send to the Brick");
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Unable to send the message to the Brick. Please try again.");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Please type a message in the above textbox for the Brick");
+        //    }
+        //}
 
         private void outputButton_Click(object sender, EventArgs e)
         {
@@ -133,7 +130,6 @@ namespace Example_Lego_Mindstorms_Bluetooth
                 refreshButton.Enabled = false;
                 connectButton.Enabled = false;
 
-                inputGroupBox.Enabled = true;
                 outputGroupBox.Enabled = true;
                 disconnectButton.Enabled = true;
 
@@ -144,7 +140,6 @@ namespace Example_Lego_Mindstorms_Bluetooth
                 refreshButton.Enabled = true;
                 connectButton.Enabled = true;
 
-                inputGroupBox.Enabled = false;
                 outputGroupBox.Enabled = false;
                 disconnectButton.Enabled = false;
             }
@@ -162,51 +157,38 @@ namespace Example_Lego_Mindstorms_Bluetooth
 
         }
 
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
-            messenger.SendMessage("MESSAGE", "forward");
-        
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnStart_MouseDown(object sender, MouseEventArgs e)
         {
-            messenger.SendMessage("MESSAGE", "right");
+            // Send a message to the Brick with title: MESSAGE and the message
+            if (messenger.SendMessage("MESSAGE", "go"))
+            {
+                //update#2432432
+
+            }
+            else
+            {
+                MessageBox.Show("Unable to send the message to the Brick. Please make sure to be connected.");
+            }
         }
 
-        private void btnReverse_Click(object sender, EventArgs e)
+        private void btnStart_MouseUp(object sender, MouseEventArgs e)
         {
-            messenger.SendMessage("MESSAGE", "reverse");
-        }
+            // Send a message to the Brick with title: MESSAGE and the message
+            if (messenger.SendMessage("MESSAGE", "stop"))
+            {
+                //update#2432432
 
-        private void btnLeft_Click(object sender, EventArgs e)
-        {
-            messenger.SendMessage("MESSAGE", "left");
-        }
-
-        private void btnstart_Click(object sender, EventArgs e)
-        {
-            messenger.SendMessage("MESSAGE", "go");
-            MessageBox.Show("The message has been send to the Brick");
-        }
-
-        private void btnstop_Click(object sender, EventArgs e)
-        {
-            messenger.SendMessage("MESSAGE", "stop");
-        }
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            messenger.SendMessage("MESSAGE", "load");
-        }
-
-        private void btnUnload_Click(object sender, EventArgs e)
-        {
-            messenger.SendMessage("MESSAGE", "unload");
-        }
-
-        private void btnStop2_Click(object sender, EventArgs e)
-        {
-            messenger.SendMessage("MESSAGE", "stop");
+            }
         }
     }
 }
