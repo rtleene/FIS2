@@ -29,11 +29,6 @@ namespace Example_Lego_Mindstorms_Bluetooth
 
         // status variables
         public string[] status = new string[4];
-        public string moveState = "idle";
-        public string loadState = "unloaded";
-        public string proxyCounter = "0";
-        public string positionNumber = "1";
-        public string outputMessage = "";
 
         //method
 
@@ -47,48 +42,39 @@ namespace Example_Lego_Mindstorms_Bluetooth
                 if (message != null)
                 {
                     status = message.ValueAsText.Split();
-                    moveState = status[0];
-                    loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
-
-                    //test
-                    //moveState = "test";
-                    //loadState = "test";
-                    //moveState = "4";
-
-                    switch (positionNumber)
+               
+                    switch (status[3])
                     {
                         default:
-                            positionNumber = "Runway 1";
+                            status[3] = "Runway 1";
                             break;
                         case "2":
-                            positionNumber = "Pick-up Zone";
+                            status[3] = "Pick-up Zone";
                             break;
                         case "3":
-                            positionNumber = "Runway 2";
+                            status[3] = "Runway 2";
                             break;
                         case "4":
-                            positionNumber = "Drop-off Zone";
+                            status[3] = "Drop-off Zone";
                             break;
                         case "5":
-                            positionNumber = "Runway 3";
+                            status[3] = "Runway 3";
                             break;
                     }
                    
 
                     // output list clear and update
                     outputlistBox.Items.Clear();
-                    outputlistBox.Items.Add("AGV: " + moveState);
-                    outputlistBox.Items.Add("Load: " + loadState);
-                    outputlistBox.Items.Add("# of proxy triggers: " + proxyCounter);
-                    outputlistBox.Items.Add("Position: " + positionNumber);
+                    outputlistBox.Items.Add("AGV: " + status[0]);
+                    outputlistBox.Items.Add("Load: " + status[1]);
+                    outputlistBox.Items.Add("Position: " + status[2]);
+                    outputlistBox.Items.Add("# of proxy triggers: " + status[3]);
                     //outputlistBox.TopIndex = outputlistBox.Items.Count - 1; // no need for this
 
 
                     //button disabling & enabling to default state
 
-                        btnStart.Enabled = true;
+                    btnStart.Enabled = true;
                         btnPause.Enabled = false;
                         btnStop.Enabled = false;
                     
