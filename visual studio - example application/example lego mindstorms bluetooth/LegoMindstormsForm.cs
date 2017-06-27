@@ -49,12 +49,13 @@ namespace Example_Lego_Mindstorms_Bluetooth
                     status = message.ValueAsText.Split();
                     moveState = status[0];
                     loadState = status[1];
-                    positionNumber = status[2];
+                    proxyCounter = status[2];
+                    positionNumber = status[3];
 
                     //test
-                    moveState = "test";
-                    loadState = "test";
-                    moveState = "4";
+                    //moveState = "test";
+                    //loadState = "test";
+                    //moveState = "4";
 
                     switch (positionNumber)
                     {
@@ -80,7 +81,8 @@ namespace Example_Lego_Mindstorms_Bluetooth
                     outputlistBox.Items.Clear();
                     outputlistBox.Items.Add("AGV: " + moveState);
                     outputlistBox.Items.Add("Load: " + loadState);
-                    outputlistBox.Items.Add("Position" + positionNumber);
+                    outputlistBox.Items.Add("# of proxy triggers: " + proxyCounter);
+                    outputlistBox.Items.Add("Position: " + positionNumber);
                     //outputlistBox.TopIndex = outputlistBox.Items.Count - 1; // no need for this
 
 
