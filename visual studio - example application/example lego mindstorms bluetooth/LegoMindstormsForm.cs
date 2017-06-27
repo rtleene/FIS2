@@ -37,7 +37,7 @@ namespace Example_Lego_Mindstorms_Bluetooth
 
         //method
 
-            public void SendInstruction(string order, bool buttonreset)
+            public void SendInstruction(string order)
         {
            // Send a message to the Brick with title: MESSAGE and the message
             if (messenger.SendMessage("MESSAGE", order))
@@ -49,8 +49,12 @@ namespace Example_Lego_Mindstorms_Bluetooth
                     status = message.ValueAsText.Split();
                     moveState = status[0];
                     loadState = status[1];
-                    proxyCounter = status[2];
-                    positionNumber = status[3];
+                    positionNumber = status[2];
+
+                    //test
+                    moveState = "test";
+                    loadState = "test";
+                    moveState = "4";
 
                     switch (positionNumber)
                     {
@@ -70,23 +74,22 @@ namespace Example_Lego_Mindstorms_Bluetooth
                             positionNumber = "Runway 3";
                             break;
                     }
-
+                   
 
                     // output list clear and update
                     outputlistBox.Items.Clear();
-                    outputMessage = moveState + loadState + proxyCounter + positionNumber;
-                    outputlistBox.Items.Add(outputMessage);
-                    outputlistBox.TopIndex = outputlistBox.Items.Count - 1;
+                    outputlistBox.Items.Add("AGV: " + moveState);
+                    outputlistBox.Items.Add("Load: " + loadState);
+                    outputlistBox.Items.Add("Position" + positionNumber);
+                    //outputlistBox.TopIndex = outputlistBox.Items.Count - 1; // no need for this
+
 
                     //button disabling & enabling to default state
-                    if (buttonreset)
-                    {
+
                         btnStart.Enabled = true;
                         btnPause.Enabled = false;
                         btnStop.Enabled = false;
-                    }
-                   
-
+                    
 
                 }
             }
@@ -220,48 +223,48 @@ namespace Example_Lego_Mindstorms_Bluetooth
      
         private void btnForward_MouseDown(object sender, MouseEventArgs e)
         {
-            SendInstruction("forward",true);
+            SendInstruction("forward");
            
         }
 
         private void btnForward_MouseUp(object sender, MouseEventArgs e)
         {
-            SendInstruction("stop", true);
+            SendInstruction("stop");
         }
 
         private void btnLeft_MouseDown(object sender, MouseEventArgs e)
         {
-            SendInstruction("left", true);
+            SendInstruction("left");
         }
 
         private void btnLeft_MouseUp(object sender, MouseEventArgs e)
         {
-            SendInstruction("stop", true);
+            SendInstruction("stop");
         }
 
         private void btnRight_MouseDown(object sender, MouseEventArgs e)
         {
-            SendInstruction("right", true);
+            SendInstruction("right");
         }
 
         private void btnRight_MouseUp(object sender, MouseEventArgs e)
         {
-            SendInstruction("stop", true);
+            SendInstruction("stop");
         }
 
         private void btnReverse_MouseDown(object sender, MouseEventArgs e)
         {
-            SendInstruction("reverse", true);
+            SendInstruction("reverse");
         }
 
         private void btnReverse_MouseUp(object sender, MouseEventArgs e)
         {
-            SendInstruction("stop", true);
+            SendInstruction("stop");
         }
 
         private void btnPickUp_Click(object sender, EventArgs e)
         {
-            SendInstruction("load", false);
+            SendInstruction("load");
             btnPickUp.Enabled = false;
             btnDropOff.Enabled = true;
             btnDropOff.Focus();
@@ -272,7 +275,7 @@ namespace Example_Lego_Mindstorms_Bluetooth
         private void btnDropOff_Click(object sender, EventArgs e)
         {
 
-            SendInstruction("unload", false);
+            SendInstruction("unload");
             btnPickUp.Enabled = true;
             btnDropOff.Enabled = false;
             btnPickUp.Focus();
@@ -281,7 +284,7 @@ namespace Example_Lego_Mindstorms_Bluetooth
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            SendInstruction("start", false);
+            SendInstruction("start");
             btnPause.Enabled = true;
             btnStop.Enabled = true;
             btnStart.Enabled = false;
@@ -294,7 +297,7 @@ namespace Example_Lego_Mindstorms_Bluetooth
         {
 
 
-            SendInstruction("pause", true);
+            SendInstruction("pause");
             btnPause.Enabled = false;
             btnStop.Enabled = true;
 
@@ -308,7 +311,7 @@ namespace Example_Lego_Mindstorms_Bluetooth
         private void btnStop_Click(object sender, EventArgs e)
         {
 
-            SendInstruction("stop", false);
+            SendInstruction("stop");
             btnPause.Enabled = false;
             btnStop.Enabled = false;
 
